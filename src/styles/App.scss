@@ -1,0 +1,191 @@
+// CSS Reset
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+// Colors
+$color1: #161616;
+$color2: #242121;
+$color3: #a52626;
+$color4: #57667A;
+$color5: #101316;
+$color6: #eff5ff;
+$color7: #101316;
+$color20: #10213a;
+
+// Flexbox
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.half-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 50vw;
+}
+
+.full-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 100vw;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+// Font styles
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.underlined {
+    text-decoration: underline;
+}
+
+// Components
+.coming-soon-container, .page-container, .homepage, .navbar-container, .splash-container, .about-container, .action-buttons, .schedule-container, .day-container, .form-container, .sponsor-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+// Page
+body {
+    background-color: $color1;
+}
+
+// Coming Soon 
+.coming-soon-container {
+    background-color: $color2;
+    max-width: 60vw;
+    margin: 5vw 20vw 0vw;
+    padding: 5vh 0vw 5vh;
+    border-top: 2vw solid $color3;
+    border-bottom: 2vw solid $color3;
+    h1, h2, h3 {
+        color: white;
+        padding: 1vw;
+    }
+    .coming-soon-header-container {
+        @extend .row;
+        font-size: 5vw;
+    }
+    .coming-soon-content {
+        @extend .column;
+    }
+    .coming-soon-logo-row {
+        @extend .row;
+    }
+    .coming-soon-logo {
+        max-height: 15vw;
+        max-width: auto;
+    }
+    .coming-soon-date, .coming-soon-detail {
+        font-size: 2vw;
+    }
+    .coming-soon-content-title {
+        font-size: 4vw;
+    }
+}
+
+// Navbar
+.navbar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    min-height: 10vh;
+    min-width: 100vw;
+    padding: 0.5vw 0vw 0vw;
+    background-color: $color6;
+    box-shadow: 0vh 1vw 4vw $color7;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.nav-logo {
+    height: 3.5rem;
+}
+
+.nav-option-row {
+    @extend .row;
+    justify-content: center;
+    padding: 0vh 20vw 0vh 0vw;
+}
+
+.logo-container {
+    size: 4vh;
+}
+
+.nav-button {
+    @extend .column;
+    justify-content: flex-start;
+    color: $color1;
+    padding: 1vw;
+    font-size: calc(1rem + 1.5vw);
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    color: $color3;
+    transition: 0.3s;
+}
