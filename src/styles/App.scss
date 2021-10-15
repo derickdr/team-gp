@@ -224,3 +224,15 @@ h1.about-header-text {
     border-top: $color3 solid;
     padding: 1rem 0rem 3rem;
 }
+
+// Splash
+
+.splash-container {
+    background-image: url(https://static.starcraft2.com/dist/images/global/fb-share.jpg);
+    min-height: 100vh;
+    padding: 3vw 0vw 0vw;
+    background-repeat: inherit;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
