@@ -64,6 +64,8 @@ $color20: #10213a;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    height: 70%;
 }
 
 .half-column {
@@ -100,11 +102,21 @@ $color20: #10213a;
     text-decoration: underline;
 }
 
+.home, .teams, .creators, .partners {
+    text-transform: uppercase;
+}
+
 // Components
-.coming-soon-container, .page-container, .homepage, .navbar-container, .splash-container, .about-container, .action-buttons, .schedule-container, .day-container, .form-container, .sponsor-container {
+.coming-soon-container, .page-container, .homepage, .navbar-container, .about-container, .splash-container, .about-container, .sponsor-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    overflow: hidden;
+}
+
+.coming-soon-container, .page-container, .homepage, .about-container, .splash-container, .about-container, .sponsor-container {
+    padding: 15rem 10vw 15rem;
+    background-color: $color2;
 }
 
 // Page
@@ -151,10 +163,10 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    min-height: 10vh;
+    min-height: calc(7vh + 1.5vw);
     min-width: 100vw;
     padding: 0.5vw 0vw 0vw;
-    background-color: $color6;
+    background-color: $color2;
     box-shadow: 0vh 1vw 4vw $color7;
     box-sizing: border-box;
     position: fixed;
@@ -163,7 +175,8 @@ body {
 }
 
 .nav-logo {
-    height: 3.5rem;
+    max-width: calc(4rem + 3vw);
+    padding: 1vw;
 }
 
 .nav-option-row {
@@ -179,13 +192,35 @@ body {
 .nav-button {
     @extend .column;
     justify-content: flex-start;
-    color: $color1;
-    padding: 1vw;
-    font-size: calc(1rem + 1.5vw);
+    padding: calc(3vw - 0.5vw) 2vw;
+    font-size: calc(0.8rem + 1.5vw);
     cursor: pointer;
 }
 
-.nav-button:hover {
+a.home:active {
+    text-decoration: none;
+    color: $color3;
+}
+
+a.home:link, a.home:visited, a.teams:link, a.teams:visited, a.creators:link, a.creators:visited, a.partners:link, a.partners:visited {
+    color:white;
+    text-decoration: none;
+}
+
+a.home:hover, a.teams:hover, a.creators:hover, a.partners:hover {
     color: $color3;
     transition: 0.3s;
+}
+
+// About
+
+.about-header, .about-content {
+    color:white;
+    background-color: $color2;
+}
+
+h1.about-header-text {
+    font-size: calc(2rem + 2vw);
+    border-top: $color3 solid;
+    padding: 1rem 0rem 3rem;
 }
