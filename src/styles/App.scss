@@ -24,6 +24,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+    color: white;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -65,21 +66,20 @@ $color20: #10213a;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 70%;
 }
 
 .half-column {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-width: 50vw;
+    min-width: 50%;
 }
 
 .full-column {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-width: 100vw;
+    min-width: 100%;
 }
 
 .row {
@@ -87,6 +87,7 @@ $color20: #10213a;
     flex-direction: row;
     justify-content: center;
 }
+
 
 // Font styles
 
@@ -106,17 +107,33 @@ $color20: #10213a;
     text-transform: uppercase;
 }
 
+.header-text {
+    font-size: calc(1.5rem + 2vw);
+    border-top: $color3 solid;
+    padding: 1rem 0rem 3rem;
+}
+
 // Components
-.coming-soon-container, .page-container, .homepage, .navbar-container, .about-container, .splash-container, .about-container, .sponsor-container {
+
+.content {
+    @extend .column;
+    padding: 0vw 15vw;
+}
+
+@media only screen and (max-width: 600px) {
+    .content {
+        padding: 0vw;
+    }
+}
+
+.coming-soon-container, .creators-container, .page-container, .homepage, .navbar-container, .about-container, .splash-container, .about-container, .partners-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
-}
-
-.coming-soon-container, .page-container, .homepage, .about-container, .splash-container, .about-container, .sponsor-container {
-    padding: 15rem 10vw 15rem;
     background-color: $color2;
+    min-width: 75vw;
+    padding: 3vh 5vw;
 }
 
 // Page
@@ -215,24 +232,39 @@ a.home:hover, a.teams:hover, a.creators:hover, a.partners:hover {
 // About
 
 .about-header, .about-content {
-    color:white;
     background-color: $color2;
-}
-
-h1.about-header-text {
-    font-size: calc(2rem + 2vw);
-    border-top: $color3 solid;
-    padding: 1rem 0rem 3rem;
 }
 
 // Splash
 
 .splash-container {
     background-image: url(https://static.starcraft2.com/dist/images/global/fb-share.jpg);
-    min-height: 100vh;
+    min-height: 70vh;
     padding: 3vw 0vw 0vw;
     background-repeat: inherit;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
+}
+
+// Partners
+
+.partner-container {
+    @extend .column;
+    margin: 2rem 0rem 0rem;
+    padding: 1rem;
+    background-color: $color1;
+}
+
+.blurb {
+    @extend .row;
+    padding: 2rem 0rem 2rem;
+    h2 {
+        font-size: 1.25rem;
+    }
+}
+
+.partner-logo {
+    max-height: 4rem;
+    width: auto;
 }

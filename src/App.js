@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from './components/NavBar';
+import Splash from './components/Splash';
 import HomePage from './components/HomePage';
 import Teams from './components/Teams';
 import Creators from './components/Creators';
@@ -12,20 +13,13 @@ function App() {
         <Router>
             <div className='app'>
                 <NavBar />
+                <Splash />
                 <div className='content'>
                     <Switch>
-                        <Route exact path='/home'>
-                            <HomePage />
-                        </Route>
-                        <Route exact path='/teams'>
-                            <Teams />
-                        </Route>
-                        <Route exact path='/creators'>
-                            <Creators />
-                        </Route>
-                        <Route exact path='/partners'>
-                            <Partners />
-                        </Route>
+                        <Route exact path='/home' component={HomePage} />
+                        <Route exact path='/teams' component={Teams} />
+                        <Route exact path='/creators' component={Creators} />
+                        <Route exact path='/partners' component={Partners} />
                     </Switch>
                 </div>
             </div>

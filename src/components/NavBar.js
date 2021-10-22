@@ -27,7 +27,7 @@ class NavBar extends Component{
                     </div>
                     <div className='nav-button'>
                         <div className='column'>
-                            <Link to='/parters' className='partners'>partners</Link>
+                            <Link to='/partners' className='partners'>partners</Link>
                         </div>
                     </div>
                 </div>
